@@ -3,7 +3,7 @@ FROM node:16.6-bullseye
 WORKDIR /home
 
 RUN apt update \
-	&& apt install -y build-essential unzip ffmpeg  libopus-dev libffi-dev\
+	&& apt install -y ffmpeg\
 	&& npm install -g pnpm
 
 COPY ./package.json ./package.json
