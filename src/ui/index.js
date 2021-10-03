@@ -1,5 +1,4 @@
 import { MessageEmbed } from "discord.js";
-import { getYtInfo } from "../yt/index.js";
 
 export function playerEmb(song, author) {
 	return new MessageEmbed()
