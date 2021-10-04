@@ -50,7 +50,16 @@ export class NonnMusic {
 	}
 
 	unsubscribe() {
+		if (!this.play) return;
+
 		this.voice.subscribe(this.player).unsubscribe();
+	}
+
+	destroy() {
+		if (!this.voice) return;
+
+		this.voice.destroy();
+		this.voice = undefined;
 	}
 
 	async start() {
@@ -155,8 +164,7 @@ export class NonnMusic {
 				this.queue.clear();
 				this.unsubscribe();
 				this.player.removeAllListeners();
-				this.voice.destroy();
-				this.voice = undefined;
+				this.destroy();
 
 				return;
 			}
