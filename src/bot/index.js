@@ -135,7 +135,7 @@ export class NonnMusic {
 					msg.channel.send(`❌ ${error.message}`);
 				}
 
-				this.player.on(AudioPlayerStatus.Idle, async () => {
+				this.player.once(AudioPlayerStatus.Idle, async () => {
 					this.queue.dequeue();
 					if (!this.queue.isEmpty()) {
 						const next = this.queue.front();
