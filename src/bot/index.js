@@ -66,6 +66,18 @@ export class NonnMusic {
 			const channel = msg.member.voice.channel;
 			const [command, url] = msg.content.split(" ");
 
+			// TODO: custom prefix
+			if (!command.startsWith("!")) return;
+
+			// check member is in voice channel ??
+			if (!msg.member.voice.channel) {
+				msg.channel.send(
+					`${msg.author} Join a voice channel and then try that again!`
+				);
+
+				return;
+			}
+
 			if (command === "!help") {
 				msg.channel.send({ embeds: [helpEmb()] });
 				return;
