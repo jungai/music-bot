@@ -169,11 +169,11 @@ export class NonnMusic {
 				return;
 			}
 
-			if (command === "!skip") {
-				this.player.stop();
+			// if (command === "!skip") {
+			// 	this.player.stop();
 
-				return;
-			}
+			// 	return;
+			// }
 		});
 	}
 }
